@@ -1,0 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,105 @@
+<!doctype html>
+
+<html lang = "en">
+
+<head>
+  <meta charset="UTF-8 Cyrillic">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hristo Hristov - Portfolio</title>
+
+  <!-- Inline Critical CSS -->
+  <style>
+    body { font-family: 'Comfortaa', sans-serif; }
+    h1 { font-family: 'Russo One', sans-serif; }
+    h2, h3, h4, h5, h6 { font-family: 'Roboto Slab', serif; }
+  </style>
+
+
+  <meta name="description" content="Hristo Hristov's portfolio showcasing software engineering projects and skills. Explore my work and learn more about my expertise in software development.">
+  <meta name="keywords" content="Hristo Hristov, portfolio, software engineering, web development, programming, game development, university of ruse">
+
+  <meta property="og:title" content="Hristo Hristov - Portfolio">
+  <meta property="og:description" content="The portfolio of Hristo Hristov, a software engineering student.">
+  <meta property="og:image" content="https://milkeles.com/og-image.jpg">
+  <meta property="og:url" content="https://milkeles.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hristo Hristov's Portfolio">
+
+  <!--alternate language links-->
+  <link rel="alternate" hreflang="en" href="https://milkeles.com/" >
+  <link rel="alternate" hreflang="bg" href="https://milkeles.com/bg/" >
+
+  <!--resources-->
+  <link href="./../output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap" as="style">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="bg-blue-800 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-4xl">Hristo Hristov</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#about" class="hover:underline">About</a></li>
+          <li><a href="#projects" class="hover:underline">Projects</a></li>
+          <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- Main Content -->
+  <main class="container mx-auto p-4">
+    <!-- Hero Section -->
+    <section id="hero" class="flex flex-col items-center text-center py-16">
+      <h1 class="text-3xl">Welcome to My Portfolio</h1>
+      <p>I'm Hristo Hristov, a software engineering student. Explore my work and projects.</p>
+      <a href="#projects" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">See My Projects</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16">
+      <h2 class="text-3xl mb-4">About Me</h2>
+      <p>Да ти имам и глупостите</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16">
+      <h2 class="text-3xl mb-4">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Project Card -->
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+          <h3 class="text-xl mb-2">Project Title</h3>
+          <p class="text-gray-700">Brief description of the project. Highlight key features or technologies used.</p>
+        </div>
+        <!-- Repeat Project Card for each project -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+      <h2 class="text-3xl mb-4">Contact Me</h2>
+      <form action="https://formspree.io/f/mldrvyon" method="POST" class="space-y-4" enctype="multipart/form-data">
+        <input type="name" name="name" placeholder="Your Name" class="w-full p-2 border rounded-lg" required>
+        <input type="email" name="email" placeholder="Your Email" class="w-full p-2 border rounded-lg" required>
+        <textarea name="message" placeholder="Your Message" rows="4" class="w-full p-2 border rounded-lg"></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-800 text-white p-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Hristo Hristov. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
