@@ -83,18 +83,27 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-16">
-      <h2 class="text-3xl mb-4">Contact Me (please don't, especially you, Chichi)</h2>
-      <form action="https://formspree.io/f/mldrvyon" method="POST" class="space-y-4" enctype="multipart/form-data">
-        <input type="name" name="name" placeholder="Your Name" class="w-full p-2 border rounded-lg" required>
-        <input type="email" name="email" placeholder="Your Email" class="w-full p-2 border rounded-lg" required>
-        <textarea name="message" placeholder="Your Message" rows="4" class="w-full p-2 border rounded-lg"></textarea>
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Send Message</button>
+      <h2 id="contact-heading" class="text-3xl mb-4">Contact Me</h2>
+      <form action="https://formspree.io/f/mldrvyon" method="POST" class="space-y-4" enctype="multipart/form-data" role="form" aria-labelledby="contact-heading">
+        <div>
+          <label for="name" class="sr-only"> Your Name</label>
+          <input id="name" type="text" name="name" placeholder="Your Name" class="w-full p-2 border rounded-lg" required aria-required="true">
+        </div>
+        <div>
+          <label for="email" class="sr-only">Your Email</label>
+          <input id="email" type="email" name="email" placeholder="Your Email" class="w-full p-2 border rounded-lg" required aria-required="true">
+        </div>
+        <div>
+          <label for="message" class="sr-only">Your Message</label>
+          <textarea id="message" name="message" placeholder="Your Message" rows="4" class="w-full p-2 border rounded-lg"></textarea>
+        </div>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" aria-label="Send Message">Send Message</button>
       </form>
     </section>
   </main>
-
+    
   <!-- Footer -->
-  <footer class="bg-blue-800 text-white p-4">
+  <footer class="bg-blue-800 text-white p-4 w-full">
     <div class="container mx-auto text-center">
       <p>&copy; 2024 Hristo Hristov. All rights reserved.</p>
     </div>
