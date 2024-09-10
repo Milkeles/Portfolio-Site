@@ -1,0 +1,32 @@
+# Basic Site Configuration
+title: Hristo Hristov - Portfolio
+description: Hristo Hristov's portfolio showcasing software engineering projects and skills. Explore my work and learn more about my expertise in software development.
+baseurl: "/Portfolio-Site" # Set to "/your-subdirectory" if applicable
+url: "https://milkeles.github.io"
+
+# Markdown Processor
+markdown: kramdown
+
+# Theme
+theme: minima # Replace with your chosen theme
+
+# Asset Hashing for Cache Busting
+asset_hash: true
+
+# Build Settings
+destination: ./_site # Directory where the built site is output
+incremental: true   # Optional: Enables incremental build for faster rebuilds
+
+# Exclude Files from Build
+exclude:
+  - "README.md"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "node_modules/"
+  - "public/"
+  - "tmp/"
+
+# Plugins (Optional)
+# plugins:
+#   - jekyll-feed
+#   - jekyll-seo-tag
