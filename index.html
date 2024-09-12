@@ -42,59 +42,77 @@
 <body>
   <!-- Header -->
   <header class="sticky inset-0 z-50 border-b border-slate-100 bg-transparent">
-
     <div class="flex items-center">
-      <!-- Logo-->
+      <!-- Logo -->
       <div class="relative flex items-center">
         <img src="./images/Logo.svg" alt="Logo of the site" loading="lazy" style="color:transparent" width="32" height="32">
       </div>
-
-      <!--Navigation-->
+  
+      <!-- Main Navigation -->
       <nav class="mx-auto flex max-w-6xl gap-8 px-5 transition-all duration-200 ease-in-out lg:px-12 py-4">
-        <!--Language Selection-->
-
-        <!--Menu-->
+        <!-- Language Selection -->
+        <!-- You might want to add aria-labels or roles here if you implement a language switcher -->
+  
+        <!-- Desktop Menu -->
         <ul class="hidden items-center justify-center gap-6 md:flex">
           <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
-            <a href="./index.html">Home</a> 
+            <a href="./index.html" aria-label="Go to Home page">Home</a>
           </li>
           <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
-            <a href="./about.html">About Me</a>
+            <a href="./about.html" aria-label="Go to About Me page">About Me</a>
           </li>
           <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
-            <a href="./about.html">Projects</a>
+            <a href="./projects.html" aria-label="Go to Projects page">Projects</a>
           </li>
           <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
-            <a href="./contact.html">Contact</a>
+            <a href="./contact.html" aria-label="Go to Contact page">Contact</a>
           </li>
         </ul>
-
-        <!--Mobile navigation-->
-        <div class="flex-grow"></div> <!--Ensures menu is on leftmost of screen-->
+  
+        <div class="flex-grow"></div>
+        
+        <!-- Mobile Menu Button -->
         <div class="relative flex items-center justify-center md:hidden">
-            <button type="button" aria-label = "Open Menu Button">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-6 w-auto text-slate-900"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path></svg>
-            </button>
+          <button id="mobile-menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-6 w-auto text-slate-900">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+            </svg>
+            <span class="sr-only">Open Menu</span>
+          </button>
         </div>
       </nav>
-
+  
+      <!-- Translate Button -->
       <div class="relative">
-        <button class="flex items-center px-4 py-2 border border-gray-300 bg-gray-900 dark:bg-gray-300 dark:border-gray-900 rounded-md text-gray-200 dark:text-gray-700" area-label="Translate Button">
-          <img  src="./images/Translate.svg" alt = "Translate Icon" loading="lazy" style="color:transparent" width="32" height="32">
-          <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+        <button class="flex items-center px-4 py-2 border border-gray-300 bg-gray-900 dark:bg-gray-300 dark:border-gray-900 rounded-md text-gray-200 dark:text-gray-700" aria-label="Translate this page">
+          <img src="./images/Translate.svg" alt="Translate Icon" loading="lazy" style="color:transparent" width="32" height="32">
+          <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
         </button>
-        
-        <div class="absolute right-0 mt-2 w-48 rounded-md shadow-lg hidden">
-          <a href="./index.html" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-            English
-          </a>
-          <a href="./bg/index.html" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-            Bulgarian
-          </a>
-        </div>
       </div>
+  
+      <!-- Mobile Navigation -->
+      <nav id="mobile-menu" class="fixed inset-0 z-40 hidden flex-col items-center justify-center bg-white md:hidden" role="navigation" aria-labelledby="mobile-menu-button">
+        <ul class="flex flex-col items-center gap-6 text-center">
+          <li class="font-dm text-sm font-medium text-slate-700">
+            <a href="./index.html" aria-label="Go to Home page">Home</a>
+          </li>
+          <li class="font-dm text-sm font-medium text-slate-700">
+            <a href="./about.html" aria-label="Go to About Me page">About Me</a>
+          </li>
+          <li class="font-dm text-sm font-medium text-slate-700">
+            <a href="./projects.html" aria-label="Go to Projects page">Projects</a>
+          </li>
+          <li class="font-dm text-sm font-medium text-slate-700">
+            <a href="./contact.html" aria-label="Go to Contact page">Contact</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
+
+  <script src='./scripts/navbar.js'></script>
 
   <!-- Main Content -->
   <main class="container mx-auto p-4">
