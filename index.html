@@ -11,9 +11,12 @@
 
   <!-- Inline Critical CSS -->
   <style>
-    body { font-family: 'Comfortaa', sans-serif; }
+    body { font-family: 'Exo 2', sans-serif; }
     h1 { font-family: 'Russo One', sans-serif; }
     h2, h3, h4, h5, h6 { font-family: 'Roboto Slab', serif; }
+    li {
+
+    }
   </style>
 
 
@@ -35,55 +38,42 @@
   <link href="./output.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap" as="style">
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body class="bg-basic-light dark:bg-basic-dark">
   <!-- Header -->
-  <header class="sticky inset-0 z-50 border-b border-slate-100 bg-transparent">
+  <header class="sticky inset-0 z-49 bg-transparent">
     <div class="flex items-center">
       <!-- Logo -->
-      <div class="relative flex items-center">
+      <div class="relative flex items-center ml-4">
         <img src="./images/Logo.svg" alt="Logo of the site" loading="lazy" style="color:transparent" width="32" height="32">
       </div>
-  
-      <!-- Main Navigation -->
-      <nav class="mx-auto flex max-w-6xl gap-8 px-5 transition-all duration-200 ease-in-out lg:px-12 py-4">
-        <!-- Language Selection -->
-        <!-- You might want to add aria-labels or roles here if you implement a language switcher -->
-  
-        <!-- Desktop Menu -->
+
+      <!--Ensure menu is on leftmost part of screen-->
+      <div class="flex-grow"></div>
+
+      <!-- Desktop Navigation -->
+      <nav id = "horizontal-menu" class="mx-auto flex max-w-6xl gap-8 px-5 transition-all duration-200 ease-in-out lg:px-12 py-4 mr-4 anim">
         <ul class="hidden items-center justify-center gap-6 md:flex">
-          <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
+          <li class="li-style text-main-light dark:text-main-dark">
             <a href="./index.html" aria-label="Go to Home page">Home</a>
           </li>
-          <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
+          <li class="li-style">
             <a href="./about.html" aria-label="Go to About Me page">About Me</a>
           </li>
-          <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
+          <li class="li-style">
             <a href="./projects.html" aria-label="Go to Projects page">Projects</a>
           </li>
-          <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
+          <li class="li-style">
             <a href="./contact.html" aria-label="Go to Contact page">Contact</a>
           </li>
         </ul>
-  
-        <div class="flex-grow"></div>
-        
-        <!-- Mobile Menu Button -->
-        <div class="relative flex items-center justify-center md:hidden">
-          <button id="mobile-menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-6 w-auto text-slate-900">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-            </svg>
-            <span class="sr-only">Open Menu</span>
-          </button>
-        </div>
       </nav>
-  
+
       <!-- Translate Button -->
-      <div class="relative">
+      <div id = "lang-button" class="relative mr-4 anim">
         <button class="flex items-center px-4 py-2 border border-gray-300 bg-gray-900 dark:bg-gray-300 dark:border-gray-900 rounded-md text-gray-200 dark:text-gray-700" aria-label="Translate this page">
           <img src="./images/Translate.svg" alt="Translate Icon" loading="lazy" style="color:transparent" width="32" height="32">
           <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -91,9 +81,14 @@
           </svg>
         </button>
       </div>
+      
+      <!--Burger Button-->
+      <div id="toggle-menu" class="grid place-content-center z-50 w-10 h-10 p-6 mr-4 anim">
+        <div class="w-16 h-2 bg-black dark:bg-white rounded-full transition-all duration-150 before:content-[''] before:absolute before:w-16 before:h-2 before:bg-black dark:before:bg-white before:rounded-full before:-translate-y-4 before:transition-all before:duration-150 after:content-[''] after:absolute after:w-16 after:h-2 after:bg-black dark:after:bg-white after:rounded-full after:translate-y-4 after:transition-all after:duration-150"></div>
+      </div>
   
       <!-- Mobile Navigation -->
-      <nav id="mobile-menu" class="fixed inset-0 z-40 hidden flex-col items-center justify-center bg-white md:hidden" role="navigation" aria-labelledby="mobile-menu-button">
+      <nav id="mobile-menu" class="fixed inset-0 z-40 hidden flex-col items-center justify-center bg-transparent md:hidden" role="navigation" aria-labelledby="mobile-menu-button">
         <ul class="flex flex-col items-center gap-6 text-center">
           <li class="font-dm text-sm font-medium text-slate-700">
             <a href="./index.html" aria-label="Go to Home page">Home</a>
@@ -112,7 +107,7 @@
     </div>
   </header>
 
-  <script src='./scripts/navbar.js'></script>
+  <script src='./scripts/shared.js'></script>
 
   <!-- Main Content -->
   <main class="container mx-auto p-4">
@@ -120,7 +115,7 @@
     <section id="hero" class="flex flex-col items-center text-center py-16">
       <h1 class="text-3xl">Hristo Hristov's Portfolio</h1>
       <p>Put a very cool hero section here later.</p>
-      <a href="./contact.html" class="rounded-md bg-gradient-to-br from-main-light to-emerald-400 px-4 py-2 text-sm font-dm font-black text-black shadow-md shadow-green-400/50 transition-transform duration-200 ease-in-out hover:scale-[1.03]">Contact Me</a>
+      <a href="./contact.html" class="button-style">Contact Me</a>
     </section>
 
     <!-- About Section -->
@@ -158,7 +153,7 @@
           <label for="message" class="sr-only">Your Message</label>
           <textarea id="message" name="message" placeholder="Your Message" rows="4" class="w-full p-2 border rounded-lg"></textarea>
         </div>
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" aria-label="Send Message">Send Message</button>
+        <button type="submit" class="button-style" aria-label="Send Message">Send Message</button>
       </form>
     </section>
   </main>
