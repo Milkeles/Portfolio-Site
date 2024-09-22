@@ -19,4 +19,3 @@
 .button-style {
     @apply rounded-md text-base lg:text-lg font-semibold text-black bg-gradient-to-br from-emerald-300 to-main-light dark:bg-gradient-to-br dark:from-emerald-300 dark:to-main-dark px-4 py-2 shadow-md shadow-green-400/50 anim hover:scale-110 motion-reduce:hover:scale-100;
 }
-
