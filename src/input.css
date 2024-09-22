@@ -1,4 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hamburger-toggle {
+    @apply [&>div]:bg-transparent [&>div]:transition-transform duration-300 ease-in-out [&>div]:before:translate-y-0 [&>div]:before:rotate-45 [&>div]:after:translate-y-0 [&>div]:after:-rotate-45;
+}
+
+.anim {
+    @apply  transition-transform duration-200 ease-in-out delay-100 motion-reduce:transition-none motion-reduce:transform-none motion-reduce:hover:scale-100;
+}
+
+.li-style {
+    @apply text-base dark:text-gray-200 anim hover:scale-110 motion-reduce:hover:scale-100 hover:text-basic-dark dark:hover:text-basic-light lg:text-lg;
+}
+
+.button-style {
+    @apply rounded-md text-base lg:text-lg font-semibold text-black bg-gradient-to-br from-emerald-300 to-main-light dark:bg-gradient-to-br dark:from-emerald-300 dark:to-main-dark px-4 py-2 shadow-md shadow-green-400/50 anim hover:scale-110 motion-reduce:hover:scale-100;
+}
+

@@ -3,7 +3,7 @@
 <html lang = "en">
 
 <head>
-  <meta charset="UTF-8 Cyrillic">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,9 +11,19 @@
 
   <!-- Inline Critical CSS -->
   <style>
-    body { font-family: 'Comfortaa', sans-serif; }
-    h1 { font-family: 'Russo One', sans-serif; }
-    h2, h3, h4, h5, h6 { font-family: 'Roboto Slab', serif; }
+    html {
+      height: 100%;
+      scroll-behavior: smooth
+    }
+    body { font-family: 'Exo 2', sans-serif; }
+    h1 {
+      font-family: 'Russo One', sans-serif;
+      @apply text-black dark:text-white;
+    }
+    h2, h3, h4, h5, h6 {
+      font-family: 'Roboto Slab', serif;
+      @apply text-black dark:text-white;
+    }
   </style>
 
 
@@ -32,40 +42,98 @@
   <link rel="alternate" hreflang="bg" href="https://milkeles.com/bg/" >
 
   <!--resources-->
-  <link href="./../output.css" rel="stylesheet">
+  <link href="./output.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap" media="print" onload="this.media='all'">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 
-<body>
-
+<body class="bg-basic-light dark:bg-basic-dark text-gray-800 dark:text-gray-200">
   <!-- Header -->
-  <header class="bg-blue-800 text-white p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-4xl">Hristo Hristov</h1>
-      <nav>
-        <ul class="flex space-x-4">
-          <li><a href="#about" class="hover:underline">About</a></li>
-          <li><a href="#projects" class="hover:underline">Projects</a></li>
-          <li><a href="#contact" class="hover:underline">Contact</a></li>
-        </ul>
-      </nav>
+  <header class="sticky inset-0 z-49 bg-transparent h-16 flex items-center">
+    <div class="flex items-center px-5 lg:px-12 py-4 w-full h-full relative">
+      <!-- Logo -->
+      <div class="relative flex items-center z-50">
+        <img src="./images/Logo.svg" alt="Logo of the site" loading="lazy" style="color:transparent" width="32" height="32">
+      </div>
+
+      <!-- Navigation and Translation Button Container -->
+      <div class="flex flex-grow justify-between items-center">
+        <!-- Desktop Navigation -->
+        <nav id="horizontal-menu" class="mx-auto flex max-w-6xl gap-10 px-5 transition-all duration-200 ease-in-out lg:px-12 py-4 h-full z-5">
+          <ul class="flex items-center justify-center gap-6 list-none p-0 m-0">
+            <li class="li-style text-main-light dark:text-main-dark hover:text-main-light dark:hover:text-main-dark hover:font-medium">
+              <a href="./index.html" aria-label="Go to Home page">Home</a>
+            </li>
+            <li class="li-style">
+              <a href="./about.html" aria-label="Go to About Me page">About Me</a>
+            </li>
+            <li class="li-style">
+              <a href="./projects.html" aria-label="Go to Projects page">Projects</a>
+            </li>
+            <li class="li-style">
+              <a href="./contact.html" aria-label="Go to Contact page">Contact</a>
+            </li>
+          </ul>
+        </nav>
+  
+      <!-- Translate Button -->
+      <div id="lang-button" class="absolute right-20 top-1/2 transform -translate-y-1/2">
+        <button class="flex items-center px-4 py-2 border border-gray-300 bg-gray-900 dark:bg-gray-300 dark:border-gray-900 rounded-md text-gray-200 dark:text-gray-700" aria-label="Translate this page">
+          <img src="./images/Translate.svg" alt="Translate Icon" loading="lazy" style="color:transparent" width="32" height="32">
+          <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Burger Button -->
+      <button id="toggle-menu" class="absolute right-0 top-1/2 transform -translate-y-1/2 flex items-center place-content-center z-50 w-20 h-10 p-6">
+        <div class="absolute w-10 h-1.5 bg-black dark:bg-white rounded-full transition-all duration-300 ease-in-out before:content-[''] before:absolute before:w-12 before:h-1.5 before:bg-black dark:before:bg-white before:rounded-full before:-translate-y-3 before:-translate-x-5 before:transition-all before:duration-300 ease-in-out after:content-[''] after:absolute after:w-12 after:h-1.5 after:bg-black dark:after:bg-white after:rounded-full after:translate-y-3 after:-translate-x-5 after:transition-all after:duration-300 ease-in-out"></div>
+      </button>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-navigation" class="w-screen h-screen fixed inset-0 z-30 md:h-16 md:z-0 md:hidden">
+        <div id="slideover-container" class="w-full h-full fixed inset-0 invisible">
+          <div onclick="toggleSlideover()" id="slideover-bg" class="w-full h-full duration-400 ease-out transition-all inset-0 absolute bg-black opacity-0 backdrop-blur-xl md:hidden"></div>
+          <nav onclick="toggleSlideover()" id="slideover" class="w-96 bg-basic-light dark:bg-basic-dark h-full fixed top-0 right-0 duration-300 ease-out transition-all translate-x-full md:relative md:w-full md:h-16 md:top-0 md:right-0 md:flex md:items-center md:justify-center">
+            <ul class="flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:gap-4">
+              <li class="li-style text-main-light dark:text-main-dark hover:text-main-light dark:hover:text-main-dark hover:font-medium">
+                <a href="./index.html" aria-label="Go to Home page">Home</a>
+              </li>
+              <li class="li-style">
+                <a href="./about.html" aria-label="Go to About Me page">About Me</a>
+              </li>
+              <li class="li-style">
+                <a href="./projects.html" aria-label="Go to Projects page">Projects</a>
+              </li>
+              <li class="li-style">
+                <a href="./contact.html" aria-label="Go to Contact page">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
-  </header>
+  </header>  
+
+  <script src='./scripts/shared.js'></script>
+
   <!-- Main Content -->
   <main class="container mx-auto p-4">
     <!-- Hero Section -->
     <section id="hero" class="flex flex-col items-center text-center py-16">
-      <h1 class="text-3xl">Welcome to My Portfolio</h1>
-      <p>I'm Hristo Hristov, a software engineering student. Explore my work and projects.</p>
-      <a href="#projects" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">See My Projects</a>
+      <h1 class="text-3xl">Hristo Hristov's Portfolio</h1>
+      <p>Put a very cool hero section here later.</p>
+      <a href="./contact.html" class="button-style">Contact Me</a>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-16">
       <h2 class="text-3xl mb-4">About Me</h2>
-      <p>Да ти имам и глупостите</p>
+      <p>I am 19. Random long enough text because this entire thing will be redesigned once I find out how to deploy it so that I can run lighthouse test in it but results will probably be good.</p>
     </section>
 
     <!-- Projects Section -->
@@ -74,8 +142,8 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Project Card -->
         <div class="bg-white p-4 rounded-lg shadow-lg">
-          <h3 class="text-xl mb-2">Project Title</h3>
-          <p class="text-gray-700">Brief description of the project. Highlight key features or technologies used.</p>
+          <h3 class="text-xl mb-2">Portfolio Website</h3>
+          <p class="text-gray-700">Tailwind and js. Practicing CRO. Idk why I'm putting this here now but will probably move it.</p>
         </div>
         <!-- Repeat Project Card for each project -->
       </div>
@@ -83,18 +151,27 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-16">
-      <h2 class="text-3xl mb-4">Contact Me</h2>
-      <form action="https://formspree.io/f/mldrvyon" method="POST" class="space-y-4" enctype="multipart/form-data">
-        <input type="name" name="name" placeholder="Your Name" class="w-full p-2 border rounded-lg" required>
-        <input type="email" name="email" placeholder="Your Email" class="w-full p-2 border rounded-lg" required>
-        <textarea name="message" placeholder="Your Message" rows="4" class="w-full p-2 border rounded-lg"></textarea>
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Send Message</button>
+      <h2 id="contact-heading" class="text-3xl mb-4">Contact Me</h2>
+      <form action="https://formspree.io/f/mldrvyon" method="POST" class="space-y-4" enctype="multipart/form-data" role="form" aria-labelledby="contact-heading">
+        <div>
+          <label for="name" class="sr-only"> Your Name</label>
+          <input id="name" type="text" name="name" placeholder="Your Name" class="w-full p-2 border rounded-lg" required aria-required="true">
+        </div>
+        <div>
+          <label for="email" class="sr-only">Your Email</label>
+          <input id="email" type="email" name="email" placeholder="Your Email" class="w-full p-2 border rounded-lg" required aria-required="true">
+        </div>
+        <div>
+          <label for="message" class="sr-only">Your Message</label>
+          <textarea id="message" name="message" placeholder="Your Message" rows="4" class="w-full p-2 border rounded-lg"></textarea>
+        </div>
+        <button type="submit" class="button-style" aria-label="Send Message">Send Message</button>
       </form>
     </section>
   </main>
-
+    
   <!-- Footer -->
-  <footer class="bg-blue-800 text-white p-4">
+  <footer class="bg-blue-800 text-white p-4 w-full">
     <div class="container mx-auto text-center">
       <p>&copy; 2024 Hristo Hristov. All rights reserved.</p>
     </div>
