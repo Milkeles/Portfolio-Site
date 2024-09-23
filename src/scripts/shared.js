@@ -92,3 +92,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', handleScroll);
 });
+
+/*====== LANGUAGE DROPDOWN ======*/
+const languageButton = document.getElementById('lang-button');
+const languageDropdown = document.getElementById('lang-dropdown');
+
+const toggleDropdown = (event) => {
+    event.stopPropagation();
+
+    languageDropdown.classList.toggle('hidden');
+
+    if (!languageDropdown.classList.contains('hidden')) {
+        
+        languageDropdown.classList.remove('opacity-0', 'scale-95');
+        languageDropdown.classList.add('opacity-100', 'scale-100');
+        languageButton.setAttribute('aria-expanded', 'true');
+    } else {
+        languageDropdown.classList.remove('opacity-100', 'scale-100');
+        languageDropdown.classList.add('opacity-0', 'scale-95');
+        languageButton.setAttribute('aria-expanded', 'false');
+    }
+};
+
+const closeDropdown = () => {
+    if (!languageDropdown.classList.contains('hidden')) {
+        languageDropdown.classList.add('hidden');
+        languageDropdown.classList.remove('opacity-100', 'scale-100');
+        languageDropdown.classList.add('opacity-0', 'scale-95');
+        languageButton.setAttribute('aria-expanded', 'false');
+    }
+};
+
+languageButton.addEventListener('click', toggleDropdown);
+
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeDropdown();
+    }
+});

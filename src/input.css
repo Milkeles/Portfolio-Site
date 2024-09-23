@@ -8,14 +8,36 @@
     @apply [&>div]:bg-transparent [&>div]:transition-transform duration-300 ease-in-out [&>div]:before:translate-y-0 [&>div]:before:rotate-45 [&>div]:after:translate-y-0 [&>div]:after:-rotate-45;
 }
 
-.anim {
-    @apply  transition-transform duration-200 ease-in-out delay-100 motion-reduce:transition-none motion-reduce:transform-none motion-reduce:hover:scale-100;
+/*.li-style {
+    @apply text-base dark:text-neutral-200 anim hover:scale-110 motion-reduce:hover:scale-100 hover:text-basic-dark dark:hover:text-basic-light lg:text-lg;
+}*/
+
+/*Primary Button*/
+.button-fill {
+    @apply rounded-md text-center inline-flex items-center me-2 lg:text-lg font-semibold text-black bg-gradient-to-r from-emerald-300 to-main-light dark:from-emerald-300 dark:to-main-dark px-4 py-2 shadow-md shadow-green-400/50 duration-300;
 }
 
-.li-style {
-    @apply text-base dark:text-gray-200 anim hover:scale-110 motion-reduce:hover:scale-100 hover:text-basic-dark dark:hover:text-basic-light lg:text-lg;
+.button-fill:hover {
+    @apply bg-gradient-to-br to-emerald-300 from-main-light dark:from-main-dark dark:to-emerald-300;
 }
 
-.button-style {
-    @apply rounded-md text-base lg:text-lg font-semibold text-black bg-gradient-to-br from-emerald-300 to-main-light dark:bg-gradient-to-br dark:from-emerald-300 dark:to-main-dark px-4 py-2 shadow-md shadow-green-400/50 anim hover:scale-110 motion-reduce:hover:scale-100;
+/*List items*/
+.nav {
+    @apply relative ml-5 lg:ml-10 text-neutral-700 dark:text-neutral-300 font-semibold tracking-wide hover:text-black dark:hover:text-white 
+}
+
+.nav::after {
+    @apply content-[''] bg-main-light dark:bg-main-dark h-[3px] w-[0%] left-0 -bottom-[5px] rounded-full absolute duration-300 
+}
+
+.nav:hover::after {
+    @apply w-[100%]
+}
+
+.dropdown-item {
+    @apply block px-4 py-2 text-sm text-neutral-700 dark:text-neutral-300;
+}
+
+.dropdown-item:hover{
+    @apply bg-neutral-100 dark:bg-neutral-800;
 }
