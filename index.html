@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-<html lang = "en">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,20 +15,31 @@
       height: 100%;
       scroll-behavior: smooth
     }
-    body { font-family: 'Exo 2', sans-serif; }
+
+    body {
+      font-family: 'Exo 2', sans-serif;
+    }
+
     h1 {
       font-family: 'Russo One', sans-serif;
       @apply text-black dark:text-white;
     }
-    h2, h3, h4, h5, h6 {
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: 'Roboto Slab', serif;
       @apply text-black dark:text-white;
     }
   </style>
 
 
-  <meta name="description" content="Hristo Hristov's portfolio showcasing software engineering projects and skills. Explore my work and learn more about my expertise in software development.">
-  <meta name="keywords" content="Hristo Hristov, portfolio, software engineering, web development, programming, game development, university of ruse">
+  <meta name="description"
+    content="Hristo Hristov's portfolio showcasing software engineering projects and skills. Explore my work and learn more about my expertise in software development.">
+  <meta name="keywords"
+    content="Hristo Hristov, portfolio, software engineering, web development, programming, game development, university of ruse">
 
   <meta property="og:title" content="Hristo Hristov - Portfolio">
   <meta property="og:description" content="The portfolio of Hristo Hristov, a software engineering student.">
@@ -38,88 +49,135 @@
   <meta property="og:site_name" content="Hristo Hristov's Portfolio">
 
   <!--alternate language links-->
-  <link rel="alternate" hreflang="en" href="https://milkeles.com/" >
-  <link rel="alternate" hreflang="bg" href="https://milkeles.com/bg/" >
+  <link rel="alternate" hreflang="en" href="https://milkeles.com/">
+  <link rel="alternate" hreflang="bg" href="https://milkeles.com/bg/">
 
   <!--resources-->
   <link href="./output.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap" media="print" onload="this.media='all'">
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap"
+    as="style">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap"
+    media="print" onload="this.media='all'">
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 
-<body class="bg-basic-light dark:bg-basic-dark text-gray-800 dark:text-gray-200">
+<body class="bg-basic-light dark:bg-basic-dark text-neutral-800 dark:text-neutral-200">
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-transparent h-16 flex items-center">
     <div class="flex items-center px-5 lg:px-12 py-4 w-full h-full relative">
-      
+
       <!-- Logo -->
-      <div class="flex items-center z-50">
-        <img src="./images/Logo.svg" alt="Logo of the site" loading="lazy" width="32" height="32">
+      <div class="flex items-center z-50" width="32" height="32">
+        <svg class="logo text-black dark:text-white" loading="lazy" xmlns="http://www.w3.org/2000/svg" width="32"
+          height="32" viewBox="0 0 88 88" fill="none" aria-label="[title]">
+          <title>Logo of the site.</title>
+          <path
+            d="M66.1 44.1765H44V38.8519C47.8 38.8519 50.5 37.9806 52.1 36.238C53.7 34.4954 54.5 31.333 54.5 26.7506V22.3941C54.5 17.7472 55.2 14.1006 56.6 11.4544C58.0667 8.74374 60.4333 6.83979 63.7 5.7426C66.9667 4.58087 71.3 4 76.7 4H81.7V18.328H77.3C75.4333 18.328 74.1 18.8121 73.3 19.7802C72.5 20.7483 72.1 22.5554 72.1 25.2016V32.0752C72.1 35.2377 71.5667 37.787 70.5 39.7232C69.5 41.5949 68.0333 43.0794 66.1 44.1765Z"
+            fill="currentColor" />
+          <path
+            d="M66.4 45H44V50.131C47.8 50.131 50.5 51.0023 52.1 52.7449C53.7 54.4875 54.5 57.65 54.5 62.2323V66.5888C54.5 71.2358 55.2 74.8823 56.6 77.5285C58.0667 80.2392 60.4333 82.1431 63.7 83.2403C66.9667 84.4021 71.3 84.9829 76.7 84.9829H81.7V70.6549H77.3C75.4333 70.6549 74.1 70.1709 73.3 69.2027C72.5 68.1701 72.1 66.363 72.1 63.7813V56.9077C72.1 53.8743 71.6 51.4218 70.6 49.5501C69.6 47.6139 68.2 46.0972 66.4 45Z"
+            fill="currentColor" />
+          <path
+            d="M19.6 44.1765H41.7V38.8519C37.9 38.8519 35.2 37.9806 33.6 36.238C32 34.4954 31.2 31.333 31.2 26.7506V22.3941C31.2 17.7472 30.5 14.1006 29.1 11.4544C27.6333 8.74374 25.2667 6.83979 22 5.7426C18.7333 4.58087 14.4 4 9 4H4V18.328H8.4C10.2667 18.328 11.6 18.8121 12.4 19.7802C13.2 20.7483 13.6 22.5554 13.6 25.2016V32.0752C13.6 35.2377 14.1333 37.787 15.2 39.7232C16.2 41.5949 17.6667 43.0793 19.6 44.1765Z"
+            fill="currentColor" />
+          <path
+            d="M19.3 45H41.7V50.131C37.9 50.131 35.2 51.0023 33.6 52.7449C32 54.4875 31.2 57.65 31.2 62.2323V66.5888C31.2 71.2358 30.5 74.8823 29.1 77.5285C27.6333 80.2392 25.2667 82.1431 22 83.2403C18.7333 84.4021 14.4 84.9829 9 84.9829H4V70.6549H8.4C10.2667 70.6549 11.6 70.1708 12.4 69.2027C13.2 68.1701 13.6 66.363 13.6 63.7813V56.9077C13.6 53.8743 14.1 51.4218 15.1 49.5501C16.1 47.6139 17.5 46.0972 19.3 45Z"
+            fill="currentColor" />
+        </svg>
       </div>
-  
+
       <!-- Navigation and Translation Button Container -->
       <div class="w-full flex flex-grow justify-center items-center">
-        
+
         <!-- Desktop Navigation -->
-        <nav id="horizontal-menu" class="w-screen h-16 fixed inset-0 z-30 flex items-center justify-center">
+        <nav id="horizontal-menu" class="w-screen h-16 fixed inset-0 z-10 flex items-center justify-center">
           <ul class="flex items-center justify-center gap-6 list-none">
-            <li class="li-style text-main-light dark:text-main-dark hover:text-main-light dark:hover:text-main-dark hover:font-medium">
+            <li class="nav">
               <a href="./index.html" aria-label="Go to Home page">Home</a>
             </li>
-            <li class="li-style">
+            <li class="nav">
               <a href="./about.html" aria-label="Go to About Me page">About Me</a>
             </li>
-            <li class="li-style">
+            <li class="nav">
               <a href="./projects.html" aria-label="Go to Projects page">Projects</a>
             </li>
-            <li class="li-style">
+            <li class="nav">
               <a href="./contact.html" aria-label="Go to Contact page">Contact</a>
             </li>
           </ul>
         </nav>
-  
-      <!-- Translate Button -->
-      <div id="lang-button" class="absolute right-20 top-1/2 transform -translate-y-1/2">
-        <button class="flex items-center px-4 py-2 border border-gray-300 bg-gray-900 dark:bg-gray-300 dark:border-gray-900 rounded-md text-gray-200 dark:text-gray-700" aria-label="Translate this page">
-          <img src="./images/Translate.svg" alt="Translate Icon" loading="lazy" style="color:transparent" width="32" height="32">
-          <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M19 9l-7 7-7-7"/>
-          </svg>
+        <!-- Translate Button -->
+        <div class="absolute right-20 top-1/2 transform -translate-y-1/2 z-20">
+          <div class="relative inline-block text-left">
+            <button type="button" id="lang-button"
+              class="z-20 inline-flex items-center justify-center gap-x-1.5 rounded-md bg-white dark:bg-neutral-900 px-3 py-2 text-neutral-900 dark:text-neutral-300 shadow-sm ring-1 ring-inset ring-neutral-300 dark:shadow-neutral-900 dark:ring-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800"
+              aria-expanded="false" aria-haspopup="true">
+              <!-- Language Icon SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+              </svg>
+              <!-- Dropdown Arrow SVG -->
+              <svg class="-mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div id="lang-dropdown"
+              class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white dark:bg-neutral-900 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden transition ease-out duration-300 transform opacity-0 scale-95"
+              role="menu" aria-orientation="vertical" aria-labelledby="lang-button" tabindex="-1">
+              <div class="py-1" role="none">
+                <a href="/index.html" class="dropdown-item" role="menuitem">English</a>
+                <a href="./bg/index.html" class="dropdown-item" role="menuitem">Български</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Burger Button -->
+        <button id="toggle-menu" name="Open Menu" aria-label="Open Menu"
+          class="absolute right-0 top-1/2 transform -translate-y-1/2 flex items-center place-content-center z-50 w-20 h-10 p-6">
+          <div
+            class="absolute w-10 h-1.5 bg-black dark:bg-white rounded-full transition-all duration-300 ease-in-out before:content-[''] before:absolute before:w-12 before:h-1.5 before:bg-black dark:before:bg-white before:rounded-full before:-translate-y-3 before:-translate-x-5 before:transition-all before:duration-300 ease-in-out after:content-[''] after:absolute after:w-12 after:h-1.5 after:bg-black dark:after:bg-white after:rounded-full after:translate-y-3 after:-translate-x-5 after:transition-all after:duration-300 ease-in-out">
+          </div>
         </button>
-      </div>
 
-      <!-- Burger Button -->
-      <button id="toggle-menu" name="Open Menu" aria-label="Open Menu" class="absolute right-0 top-1/2 transform -translate-y-1/2 flex items-center place-content-center z-50 w-20 h-10 p-6">
-        <div class="absolute w-10 h-1.5 bg-black dark:bg-white rounded-full transition-all duration-300 ease-in-out before:content-[''] before:absolute before:w-12 before:h-1.5 before:bg-black dark:before:bg-white before:rounded-full before:-translate-y-3 before:-translate-x-5 before:transition-all before:duration-300 ease-in-out after:content-[''] after:absolute after:w-12 after:h-1.5 after:bg-black dark:after:bg-white after:rounded-full after:translate-y-3 after:-translate-x-5 after:transition-all after:duration-300 ease-in-out"></div>
-      </button>
-
-      <!-- Mobile Navigation -->
-      <div id="mobile-navigation" class="w-screen h-screen fixed inset-0 z-30 md:h-16 md:z-0 hidden">
-        <div id="slideover-container" class="w-full h-full relative inset-0 invisible">
-          <div onclick="toggleSlideover()" id="slideover-bg" class="w-full h-full duration-400 ease-out transition-all inset-0 absolute bg-black opacity-0 backdrop-blur-xl md:hidden"></div>
-          <nav onclick="toggleSlideover()" id="slideover" class="w-96 bg-basic-light dark:bg-basic-dark h-full fixed top-0 right-0 duration-300 ease-out transition-all translate-x-full md:translate-x-0 opacity-0 md:relative md:w-full md:h-16 md:top-0 md:right-0 md:flex md:items-center md:justify-center">
-            <ul class="flex flex-col items-center gap-4 text-center md:flex-row md:items-center md:gap-6">
-              <li class="li-style text-main-light dark:text-main-dark hover:text-main-light dark:hover:text-main-dark hover:font-medium">
-                <a href="./index.html" aria-label="Go to Home page">Home</a>
-              </li>
-              <li class="li-style">
-                <a href="./about.html" aria-label="Go to About Me page">About Me</a>
-              </li>
-              <li class="li-style">
-                <a href="./projects.html" aria-label="Go to Projects page">Projects</a>
-              </li>
-              <li class="li-style">
-                <a href="./contact.html" aria-label="Go to Contact page">Contact</a>
-              </li>
-            </ul>
-          </nav>
+        <!-- Mobile Navigation -->
+        <div id="mobile-navigation" class="w-screen h-screen fixed inset-0 z-30 md:h-16 md:z-0 hidden">
+          <div id="slideover-container" class="w-full h-full relative inset-0 invisible">
+            <div onclick="toggleDynamicMenu()" id="slideover-bg"
+              class="w-full h-full duration-400 ease-out transition-all inset-0 absolute bg-black opacity-0 backdrop-blur-xl md:hidden">
+            </div>
+            <nav onclick="toggleDynamicMenu()" id="slideover"
+              class="w-64 bg-basic-light dark:bg-basic-dark h-full fixed top-0 right-0 duration-300 ease-out transition-all translate-x-full md:translate-x-0 opacity-0 md:relative md:w-full md:h-16 md:top-0 md:right-0 md:flex md:items-center md:justify-center">
+              <ul class="flex flex-col items-center gap-4 text-center md:flex-row md:items-center md:gap-6">
+                <li class="nav">
+                  <a href="./index.html" aria-label="Go to Home page">Home</a>
+                </li>
+                <li class="nav">
+                  <a href="./about.html" aria-label="Go to About Me page">About Me</a>
+                </li>
+                <li class="nav">
+                  <a href="./projects.html" aria-label="Go to Projects page">Projects</a>
+                </li>
+                <li class="nav">
+                  <a href="./contact.html" aria-label="Go to Contact page">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
-    </div>
-  </header>  
+  </header>
 
   <script src='./scripts/shared.js'></script>
 
@@ -131,8 +189,10 @@
       <p>Put a very cool hero section here later.</p>
       <a href="./contact.html" class="button-fill" name="contect" aria-label="Contact Me">
         Contact Me
-        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9" />
         </svg>
       </a>
     </section>
@@ -140,7 +200,8 @@
     <!-- About Section -->
     <section id="about" class="py-16">
       <h2 class="text-3xl mb-4">About Me</h2>
-      <p>I am 19. Random long enough text because this entire thing will be redesigned once I find out how to deploy it so that I can run lighthouse test in it but results will probably be good.</p>
+      <p>I am 19. Random long enough text because this entire thing will be redesigned once I find out how to deploy it
+        so that I can run lighthouse test in it but results will probably be good.</p>
     </section>
 
     <!-- Projects Section -->
@@ -150,7 +211,8 @@
         <!-- Project Card -->
         <div class="bg-white p-4 rounded-lg shadow-lg">
           <h3 class="text-xl mb-2">Portfolio Website</h3>
-          <p class="text-gray-700">Tailwind and js. Practicing CRO. Idk why I'm putting this here now but will probably move it.</p>
+          <p class="text-neutral-700">Tailwind and js. Practicing CRO. Idk why I'm putting this here now but will probably
+            move it.</p>
         </div>
         <!-- Repeat Project Card for each project -->
       </div>
@@ -159,24 +221,28 @@
     <!-- Contact Section -->
     <section id="contact" class="py-16">
       <h2 id="contact-heading" class="text-3xl mb-4">Contact Me</h2>
-      <form action="https://formspree.io/f/mldrvyon" method="POST" class="space-y-4" enctype="multipart/form-data" role="form" aria-labelledby="contact-heading">
+      <form action="https://formspree.io/f/mldrvyon" method="POST" class="space-y-4" enctype="multipart/form-data"
+        role="form" aria-labelledby="contact-heading">
         <div>
           <label for="name" class="sr-only"> Your Name</label>
-          <input id="name" type="text" name="name" placeholder="Your Name" class="w-full p-2 border rounded-lg" required aria-required="true">
+          <input id="name" type="text" name="name" placeholder="Your Name" class="w-full p-2 border rounded-lg" required
+            aria-required="true">
         </div>
         <div>
           <label for="email" class="sr-only">Your Email</label>
-          <input id="email" type="email" name="email" placeholder="Your Email" class="w-full p-2 border rounded-lg" required aria-required="true">
+          <input id="email" type="email" name="email" placeholder="Your Email" class="w-full p-2 border rounded-lg"
+            required aria-required="true">
         </div>
         <div>
           <label for="message" class="sr-only">Your Message</label>
-          <textarea id="message" name="message" placeholder="Your Message" rows="4" class="w-full p-2 border rounded-lg"></textarea>
+          <textarea id="message" name="message" placeholder="Your Message" rows="4"
+            class="w-full p-2 border rounded-lg"></textarea>
         </div>
         <button type="submit" class="button-fill" aria-label="Send Message">Send Message</button>
       </form>
     </section>
   </main>
-    
+
   <!-- Footer -->
   <footer class="bg-blue-800 text-white p-4 w-full">
     <div class="container mx-auto text-center">
@@ -185,4 +251,5 @@
   </footer>
 
 </body>
+
 </html>
