@@ -52,18 +52,20 @@
 
 <body class="bg-basic-light dark:bg-basic-dark text-gray-800 dark:text-gray-200">
   <!-- Header -->
-  <header class="sticky inset-0 z-49 bg-transparent h-16 flex items-center">
+  <header class="sticky top-0 z-50 bg-transparent h-16 flex items-center">
     <div class="flex items-center px-5 lg:px-12 py-4 w-full h-full relative">
+      
       <!-- Logo -->
-      <div class="relative flex items-center z-50">
-        <img src="./images/Logo.svg" alt="Logo of the site" loading="lazy" style="color:transparent" width="32" height="32">
+      <div class="flex items-center z-50">
+        <img src="./images/Logo.svg" alt="Logo of the site" loading="lazy" width="32" height="32">
       </div>
-
+  
       <!-- Navigation and Translation Button Container -->
-      <div class="flex flex-grow justify-between items-center">
+      <div class="w-full flex flex-grow justify-center items-center">
+        
         <!-- Desktop Navigation -->
-        <nav id="horizontal-menu" class="mx-auto flex max-w-6xl gap-6 px-5 transition-all duration-200 ease-in-out lg:px-12 py-4 h-full z-5">
-          <ul class="flex items-center justify-center gap-6 list-none p-0 m-0">
+        <nav id="horizontal-menu" class="w-screen h-16 fixed inset-0 z-30 flex items-center justify-center">
+          <ul class="flex items-center justify-center gap-6 list-none">
             <li class="li-style text-main-light dark:text-main-dark hover:text-main-light dark:hover:text-main-dark hover:font-medium">
               <a href="./index.html" aria-label="Go to Home page">Home</a>
             </li>
@@ -127,7 +129,12 @@
     <section id="hero" class="flex flex-col items-center text-center py-16">
       <h1 class="text-3xl">Hristo Hristov's Portfolio</h1>
       <p>Put a very cool hero section here later.</p>
-      <a href="./contact.html" class="button-style">Contact Me</a>
+      <a href="./contact.html" class="button-fill" name="contect" aria-label="Contact Me">
+        Contact Me
+        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        </svg>
+      </a>
     </section>
 
     <!-- About Section -->
@@ -165,7 +172,7 @@
           <label for="message" class="sr-only">Your Message</label>
           <textarea id="message" name="message" placeholder="Your Message" rows="4" class="w-full p-2 border rounded-lg"></textarea>
         </div>
-        <button type="submit" class="button-style" aria-label="Send Message">Send Message</button>
+        <button type="submit" class="button-fill" aria-label="Send Message">Send Message</button>
       </form>
     </section>
   </main>
