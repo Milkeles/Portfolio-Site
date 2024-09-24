@@ -11,6 +11,26 @@
 
   <!-- Inline Critical CSS -->
   <style>
+    @font-face {
+    font-family: 'Russo One';
+    src: local('Russo One Regular'), local('Russo-One-Regular'), local('Russo One'), local('Russo-One')
+        url('/fonts/RussoOne-Regular.woff2') format('woff2'),
+        url('/fonts/RussoOne-Regular.woff') format('woff'),
+        url('/fonts/RussoOne-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+      }
+
+    @font-face {
+    font-family: 'Roboto Slab';
+    src: local('Roboto Slab Regular'), local('Roboto-Slab-Regular'), local('Roboto Slab'), local('Roboto-Slab')
+        url('/fonts/RobotoSlab-Regular.woff2') format('woff2'),
+        url('/fonts/RobotoSlab-Regular.woff') format('woff'),
+        url('/fonts/RobotoSlab-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+  }
+
     html {
       height: 100%;
       scroll-behavior: smooth
@@ -21,7 +41,7 @@
     }
 
     h1 {
-      font-family: 'Russo One', sans-serif;
+      font-family: 'Russo One', 'Arial Black', sans-serif;
       @apply text-black dark:text-white;
     }
 
@@ -54,14 +74,6 @@
 
   <!--resources-->
   <link href="./output.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap"
-    as="style">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap"
-    media="print" onload="this.media='all'">
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 
