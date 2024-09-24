@@ -12,16 +12,21 @@
   <!-- Inline Critical CSS -->
   <style>
     @font-face {
-      font-family: Russo One;
-      src: url('../public/fonts/RussoOne-Regular.woff2') format('woff2'), 
-    }
+    font-family: 'Russo One';
+    src: local('Russo One Regular'), local('Russo-One-Regular'), local('Russo One'), local('Russo-One')
+        url('/fonts/RussoOne-Regular.woff2') format('woff2'),
+        url('/fonts/RussoOne-Regular.woff') format('woff'),
+        url('/fonts/RussoOne-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+      }
 
     @font-face {
     font-family: 'Roboto Slab';
-    src: local('Roboto Slab Regular'), local('Roboto-Slab-Regular'), local('Roboto Slab'),
-        url('../public/fonts/RobotoSlab-Regular.woff2') format('woff2'),
-        url('../public/fonts/RobotoSlab-Regular.woff') format('woff'),
-        url('../public/fonts/RobotoSlab-Regular.ttf') format('truetype');
+    src: local('Roboto Slab Regular'), local('Roboto-Slab-Regular'), local('Roboto Slab'), local('Roboto-Slab')
+        url('/fonts/RobotoSlab-Regular.woff2') format('woff2'),
+        url('/fonts/RobotoSlab-Regular.woff') format('woff'),
+        url('/fonts/RobotoSlab-Regular.ttf') format('truetype');
         font-weight: 400;
         font-style: normal;
   }
@@ -36,7 +41,7 @@
     }
 
     h1 {
-      font-family: 'Russo One', sans-serif;
+      font-family: 'Russo One', 'Arial Black', sans-serif;
       @apply text-black dark:text-white;
     }
 
