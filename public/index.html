@@ -33,13 +33,35 @@
           font-display: swap;
     }
 
+    @font-face {
+      font-family: 'Exo 2';
+      src: local('Exo2 Bold'), local('Exo2-Bold'), local('Exo 2 Bold'), local('Exo-2-Bold'), local('Exo 2'), local('Exo2'),
+           url('./fonts/Exo2-Bold.woff2') format('woff2'),
+           url('./fonts/Exo2-Bold.woff') format('woff'),
+           url('./fonts/Exo2-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    
+    @font-face {
+      font-family: 'Exo 2';
+      src: local('Exo2 Regular'), local('Exo2-Regular'), local('Exo 2 Regular'), local('Exo-2-Regular'), local('Exo 2'), local('Exo2'),
+           url('./fonts/Exo2-Regular.woff2') format('woff2'),
+           url('./fonts/Exo2-Regular.woff') format('woff'),
+           url('./fonts/Exo2-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
     html {
       height: 100%;
       scroll-behavior: smooth
     }
 
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Exo 2', 'Arial', sans-serif;
     }
 
     h1 {
@@ -81,7 +103,7 @@
   
 </head>
 
-<body class="bg-basic-light dark:bg-basic-dark text-neutral-800 dark:text-neutral-200">
+<body class="bg-basic-light dark:bg-basic-dark text-neutral-800 dark:text-neutral-200 font">
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-transparent h-16 flex items-center">
     <div class="flex items-center px-5 lg:px-12 py-4 w-full h-full relative">
@@ -236,7 +258,7 @@
 
     <!-- About Section -->
     <section id="about" class="py-16">
-      <h2 class="mb-4">About Me</h2>
+      <h2>About Me</h2>
       <p>I am 19. Random long enough text because this entire thing will be redesigned once I find out how to deploy it
         so that I can run lighthouse test in it but results will probably be good.</p>
     </section>
@@ -248,7 +270,7 @@
         <!-- Project Card -->
         <div class="bg-white p-4 rounded-lg shadow-lg">
           <h3 class="mb-2">Portfolio Website</h3>
-          <p class="text-neutral-700">Tailwind and js. Practicing CRO. Idk why I'm putting this here now but will probably
+          <p class="text-neutral-700 font-exo font-bold">Tailwind and js. Practicing CRO. Idk why I'm putting this here now but will probably
             move it.</p>
         </div>
         <!-- Repeat Project Card for each project -->
