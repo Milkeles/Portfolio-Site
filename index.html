@@ -133,8 +133,8 @@
 
         <!-- Desktop Navigation -->
         <nav id="horizontal-menu" class="w-screen h-16 fixed inset-0 z-10 flex items-center justify-center">
-          <ul class="flex items-center justify-center gap-6 list-none">
-            <li class="nav">
+          <ul class="nav-container flex items-center justify-center gap-6 list-none">
+            <li class="nav-active">
               <a href="./index.html" aria-label="Go to Home page">Home</a>
             </li>
             <li class="nav">
@@ -197,8 +197,8 @@
             </div>
             <nav onclick="toggleDynamicMenu()" id="slideover"
               class="w-64 bg-basic-light dark:bg-basic-dark h-full fixed top-0 right-0 duration-300 ease-out transition-all translate-x-full md:translate-x-0 opacity-0 md:relative md:w-full md:h-16 md:top-0 md:right-0 md:flex md:items-center md:justify-center">
-              <ul class="flex flex-col items-center gap-10 text-center mt-20 md:mt-0 md:flex-row md:items-center md:gap-6">
-                <li class="nav">
+              <ul class="nav-container flex flex-col items-center gap-10 text-center mt-20 md:mt-0 md:flex-row md:items-center md:gap-6">
+                <li class="nav-active">
                   <a href="./index.html" aria-label="Go to Home page">Home</a>
                 </li>
                 <li class="nav">
@@ -219,17 +219,17 @@
 
   <script type="text/javascript" src='./scripts/shared.js'></script>
 
-  <main class="container mx-auto p-4">
+  <main class="container mx-auto">
     <!-- Hero Section -->
     <section id="hero" class="relative flex flex-col items-center text-center md:flex-row md:text-left">
   
       <!-- Text and Buttons -->
       <div class="md:w-1/2 relative z-20 order-1">
         <h1 class="text-4xl md:text-5xl dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0)]">
-          Hristo Hristov's Portfolio
+          <span>Hey!</span> My name is Hristo<span>.</span>
         </h1>
         <p class="mt-4 text-lg">
-          Put a very cool hero section here later.
+          I'm a passionate software engineering student with an interest in <b>Web</b> and <b>Game Development</b>.
         </p>
         <a href="./contact.html" class="button-fill" name="contact" aria-label="Contact Me">
           Contact Me
