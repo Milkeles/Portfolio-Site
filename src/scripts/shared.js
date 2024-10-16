@@ -12,12 +12,12 @@ Creation date:   22/09/2024 (dd/mm/yyyy)
     "use strict";
 
     /*====== MENU ======*/
-    const toggleMenuButton = document.getElementById("toggle-menu");
+    const toggleMenuButton = document.getElementById('toggle-menu');
     const slideoverContainer = document.getElementById('slideover-container');
     const slideoverBg = document.getElementById('slideover-bg');
     const slideover = document.getElementById('slideover');
-    const horizontalMenu = document.getElementById("horizontal-menu");
-    const dynamicNavigation = document.getElementById("mobile-navigation");
+    const horizontalMenu = document.getElementById('horizontal-menu');
+    const dynamicNavigation = document.getElementById('mobile-navigation');
 
     let isOpen = false;
 
