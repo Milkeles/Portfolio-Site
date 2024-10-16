@@ -79,7 +79,6 @@
     }
   </style>
 
-
   <meta name="description"
     content="Hristo Hristov's portfolio showcasing software engineering projects and skills. Explore my work and learn more about my expertise in software development.">
   <meta name="keywords"
@@ -226,12 +225,12 @@
       <!-- Text and Buttons -->
       <div class="md:w-1/2 relative z-20 order-1">
         <h1 class="text-4xl md:text-5xl dark:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0)]">
-          <span>Hey!</span> My name is Hristo<span>.</span>
+          <span role="presentation" aria-hidden="true">Hey! </span>My name is Hristo<span role="presentation" aria-hidden="true">.</span>
         </h1>
         <p class="mt-4 text-lg">
-          I'm a passionate software engineering student with an interest in <b>Web</b> and <b>Game Development</b>.
+          <span role="presentation" aria-hidden="true">> </span>I'm a passionate software engineering student with an interest in <b>Web</b> and <b>Game Development</b>.
         </p>
-        <a href="./contact.html" class="button-fill" name="contact" aria-label="Contact Me">
+        <a href="./contact.html" class="button-fill mt-2" name="contact" aria-label="Contact Me">
           Contact Me
           <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
             viewBox="0 0 14 10">
@@ -241,7 +240,7 @@
         </a>
 
         <a href="https://docs.google.com/document/d/1GZIIbvOPCnukktKW8pa6W09l-CZYZkQBJKVY5Ck5SMA/export?format=pdf"
-          class="button-outline" name="download-cv" aria-label="Download CV">
+          class="button-outline mt-4" name="download-cv" aria-label="Download CV">
           Download CV
           <svg class="rtl:rotate-180 w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
             viewBox="0 0 24 24">
@@ -313,14 +312,12 @@
       </form>
     </section>
   </main>
-
-  <!-- Footer -->
-  <footer class="bg-neutral-900 text-white p-4 w-full">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2024 Hristo Hristov. All rights reserved.</p>
-    </div>
-  </footer>
-
 </body>
+<!-- Footer -->
+<footer class="bg-neutral-100 dark:bg-neutral-900 text-black dark:text-white p-4 w-full">
+  <div class="container mx-auto text-center">
+    <p>&copy; 2024 Hristo Hristov. All rights reserved.</p>
+  </div>
+</footer>
 
 </html>
