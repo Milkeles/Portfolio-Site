@@ -52,23 +52,47 @@
     @apply transform scale-150;
 }
 
-/*List items*/
+/*Navigation items*/
+
+/*Disables the effect under nav-active when something else is hovered but not when nav-container is hovered*/
+.nav-container:has(.nav:hover):not(:has(.nav-active:hover)) .nav-active::after {
+    @apply w-[0%];
+}
+
 .nav {
-    @apply relative ml-5 lg:ml-10 text-neutral-700 dark:text-neutral-300 font-semibold tracking-wide hover:text-black dark:hover:text-white 
+    @apply relative ml-5 lg:ml-10 text-neutral-700 dark:text-neutral-300 font-semibold tracking-wide hover:text-black dark:hover:text-white;
 }
 
 .nav::after {
-    @apply content-[''] bg-main-light dark:bg-main-dark h-[3px] w-[0%] left-0 -bottom-[5px] rounded-full absolute duration-300 
+    @apply content-[''] bg-main-light dark:bg-main-dark h-[3px] w-[0%] left-0 -bottom-[5px] rounded-full absolute duration-300;
 }
 
 .nav:hover::after {
-    @apply w-[100%]
+    @apply w-[100%];
 }
 
+.nav-active {
+    @apply relative ml-5 lg:ml-10 text-neutral-700 dark:text-neutral-300 font-semibold tracking-wide hover:text-black dark:hover:text-white;
+}
+
+.nav-active::after {
+    @apply content-[''] bg-main-light dark:bg-main-dark h-[3px] w-[100%] left-0 -bottom-[5px] rounded-full absolute duration-300 delay-150;
+}
+
+.nav-active:hover::after {
+    @apply w-[100%];
+}
+
+/* Language Dropdown */
 .dropdown-item {
     @apply block px-4 py-2 text-sm text-neutral-700 dark:text-neutral-300;
 }
 
 .dropdown-item:hover{
     @apply bg-neutral-100 dark:bg-neutral-800;
+}
+
+/* Text highlighter */
+span {
+    @apply text-main-light dark:text-main-dark;
 }
