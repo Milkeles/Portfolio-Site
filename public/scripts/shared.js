@@ -1,2 +1,133 @@
-/*! For license information please see shared.js.LICENSE.txt */
-(()=>{var __webpack_modules__={"./src/scripts/shared.js":()=>{eval("/*\r\nThis script handles all the front-end logic that's shared across different pages in the site:\r\n- Menu\r\n- Language dropdown\r\n\r\nAuthor: Hristo Hristov (Milkeles)\r\nCreation date:   22/09/2024 (dd/mm/yyyy)\r\n*/\r\n\r\n// Ensures that no variables go in the global scope to prevent overwriting.\r\n(function main() {\r\n    \"use strict\";\r\n\r\n    /*====== MENU ======*/\r\n    const toggleMenuButton = document.getElementById('toggle-menu');\r\n    const slideoverContainer = document.getElementById('slideover-container');\r\n    const slideoverBg = document.getElementById('slideover-bg');\r\n    const slideover = document.getElementById('slideover');\r\n    const horizontalMenu = document.getElementById('horizontal-menu');\r\n    const dynamicNavigation = document.getElementById('mobile-navigation');\r\n\r\n    let isOpen = false;\r\n\r\n    /*\r\n    Manages the visibility of the toggable dynamic menu that can be opened via the hamburger button:\r\n    - Makes the menu either visible or invisible depending on its current state.\r\n    - Ensures its opening and closing animations play properly.\r\n    */\r\n    const toggleDynamicMenu = () => {\r\n        toggleMenuButton.classList.toggle('hamburger-toggle');\r\n\r\n        if (isOpen) {\r\n            // Ensure animations play before the element is removed from the DOM.\r\n            setTimeout(() => {\r\n                dynamicNavigation.classList.add('hidden');\r\n                slideoverContainer.classList.add('invisible');\r\n                toggleMenuButton.disabled = false;\r\n            }, 300);\r\n\r\n            toggleMenuButton.disabled = true;\r\n            slideoverBg.classList.add('opacity-0');\r\n            slideoverBg.classList.remove('opacity-50');\r\n            slideover.classList.add('translate-x-full');\r\n            slideover.classList.remove('translate-x-0');\r\n            slideover.classList.add('opacity-0');\r\n            slideover.classList.remove('opacity-100');\r\n            isOpen = false;\r\n        } else {\r\n            dynamicNavigation.classList.remove('hidden');\r\n            slideoverContainer.classList.remove('invisible');\r\n\r\n            // Ensure animations play after the element is added to the DOM.\r\n            requestAnimationFrame(() => {\r\n                slideoverBg.classList.remove('opacity-0');\r\n                slideoverBg.classList.add('opacity-50');\r\n                slideover.classList.remove('translate-x-full');\r\n                slideover.classList.add('translate-x-0');\r\n                slideover.classList.remove('opacity-0');\r\n                slideover.classList.add('opacity-100');\r\n            });\r\n\r\n            isOpen = true;\r\n        }\r\n    };\r\n\r\n    // Add click event listener for the mobile hamburger button\r\n    if (toggleMenuButton) {\r\n        toggleMenuButton.addEventListener('click', toggleDynamicMenu);\r\n    }\r\n\r\n    /*\r\n    A function that controls the visibility of the dynamic menu:\r\n    - When the user is on top of the page, close and hide the hamburger menu.\r\n    - When the user scrolls, show the hamburger and allow them to open the menu.\r\n    - Hides the static menu and enables only the toggleble hamburger menu on mobile devices.\r\n    */\r\n    const MOBILE_BREAKPOINT = 768;\r\n    const handleScroll = () => {\r\n        const isSmallScreen = window.innerWidth <= MOBILE_BREAKPOINT;\r\n\r\n        if (isSmallScreen) {\r\n            toggleMenuButton.classList.remove('hidden');\r\n            horizontalMenu.classList.add('hidden');\r\n        } else {\r\n            if (window.scrollY >= 50) {\r\n                toggleMenuButton.classList.remove('hidden');\r\n                horizontalMenu.classList.add('hidden');\r\n            } else {\r\n                toggleMenuButton.classList.add('hidden');\r\n                horizontalMenu.classList.remove('hidden');\r\n\r\n                // Close the dynamic menu when the user is on top of the page.\r\n                if (isOpen) {\r\n                    toggleDynamicMenu();\r\n                }\r\n            }\r\n        }\r\n    };\r\n\r\n    document.addEventListener('DOMContentLoaded', () => {\r\n        handleScroll();\r\n\r\n        window.addEventListener('scroll', handleScroll);\r\n\r\n        window.addEventListener('resize', handleScroll);\r\n    });\r\n\r\n    /*====== LANGUAGE DROPDOWN ======*/\r\n    const languageButton = document.getElementById('lang-button');\r\n    const languageDropdown = document.getElementById('lang-dropdown');\r\n\r\n    /*\r\n    Closes the language dropdown and handles Escape keypress to close it.\r\n    */\r\n    const closeDropdown = () => {\r\n        if (!languageDropdown.classList.contains('hidden')) {\r\n            languageDropdown.classList.add('hidden');\r\n            languageDropdown.classList.remove('opacity-100', 'scale-100');\r\n            languageDropdown.classList.add('opacity-0', 'scale-95');\r\n            languageButton.setAttribute('aria-expanded', 'false');\r\n        }\r\n    };\r\n\r\n    /*\r\n    Opens the language dropdown.\r\n    */\r\n    const openDropdown = () => {\r\n        languageDropdown.classList.remove('hidden');\r\n        languageDropdown.classList.remove('opacity-0', 'scale-95');\r\n        languageDropdown.classList.add('opacity-100', 'scale-100');\r\n        languageButton.setAttribute('aria-expanded', 'true');\r\n    };\r\n\r\n    /*\r\n    A function that either opens or closes the dropdown depending on its\r\n    current state. \r\n    */\r\n    const toggleDropdown = (event) => {\r\n        event.stopPropagation();\r\n\r\n        if (languageDropdown.classList.contains('hidden')) {\r\n            openDropdown();\r\n        } else {\r\n            closeDropdown();\r\n        }\r\n    };\r\n\r\n    if (languageButton) {\r\n        languageButton.addEventListener('click', toggleDropdown);\r\n    }\r\n\r\n    // Closes the language dropdown if the user clicks escape.\r\n    document.addEventListener('keydown', (event) => {\r\n        if (event.key === 'Escape') {\r\n            closeDropdown();\r\n        }\r\n    });\r\n})();\n\n//# sourceURL=webpack://siteproject/./src/scripts/shared.js?")}},__webpack_exports__={};__webpack_modules__["./src/scripts/shared.js"]()})();
+/*
+This script handles all the front-end logic that's shared across pages in the site:
+- Menu
+
+Author: Hristo Hristov (Milkeles)
+Date:   22/09/2024 (dd/mm/yyyy)
+*/
+"use strict";
+
+/*====== MENU ======*/
+const toggleMenuButton = document.getElementById("toggle-menu");
+const slideoverContainer = document.getElementById('slideover-container');
+const slideoverBg = document.getElementById('slideover-bg');
+const slideover = document.getElementById('slideover');
+const horizontalMenu = document.getElementById("horizontal-menu");
+const dynamicNavigation = document.getElementById("mobile-navigation");
+
+let isOpen = false;
+
+// Make the dynamic menu visible or invisible.
+const toggleDynamicMenu = () => {
+    toggleMenuButton.classList.toggle('hamburger-toggle');
+
+    if (isOpen) {
+
+        // Ensure animations play before the element is removed from the DOM.
+        setTimeout(() => {
+            dynamicNavigation.classList.add('hidden');
+            slideoverContainer.classList.add('invisible');
+            toggleMenuButton.disabled = false;
+        }, 300);
+
+        toggleMenuButton.disabled = true;
+        slideoverBg.classList.add('opacity-0');
+        slideoverBg.classList.remove('opacity-50');
+        slideover.classList.add('translate-x-full');
+        slideover.classList.remove('translate-x-0');
+        slideover.classList.add('opacity-0');
+        slideover.classList.remove('opacity-100');
+        isOpen = false;
+    } else {
+        dynamicNavigation.classList.remove('hidden');
+        slideoverContainer.classList.remove('invisible');
+
+        // Ensure animations play after the element is added to the DOM.
+        requestAnimationFrame(() => {
+            slideoverBg.classList.remove('opacity-0');
+            slideoverBg.classList.add('opacity-50');
+            slideover.classList.remove('translate-x-full');
+            slideover.classList.add('translate-x-0');
+            slideover.classList.remove('opacity-0');
+            slideover.classList.add('opacity-100');
+        });
+
+        isOpen = true;
+    }
+};
+
+// Add click event listener for the mobile button
+if (toggleMenuButton) {
+    toggleMenuButton.addEventListener('click', toggleDynamicMenu);
+}
+
+// Handle Scroll evenets
+const handleScroll = () => {
+    const isSmallScreen = window.innerWidth <= 768;
+
+    if (isSmallScreen) {
+        toggleMenuButton.classList.remove('hidden');
+        horizontalMenu.classList.add('hidden');
+    } else {
+        if (window.scrollY >= 50) {
+            toggleMenuButton.classList.remove('hidden');
+            horizontalMenu.classList.add('hidden');
+        } else {
+            toggleMenuButton.classList.add('hidden');
+            horizontalMenu.classList.remove('hidden');
+
+            // Close the dynamic menu when the user is on top of the page.
+            if(isOpen) {
+                toggleDynamicMenu();
+                isOpen = false;
+            }
+        }
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('resize', handleScroll);
+});
+
+/*====== LANGUAGE DROPDOWN ======*/
+const languageButton = document.getElementById('lang-button');
+const languageDropdown = document.getElementById('lang-dropdown');
+
+const toggleDropdown = (event) => {
+    event.stopPropagation();
+
+    languageDropdown.classList.toggle('hidden');
+
+    if (!languageDropdown.classList.contains('hidden')) {
+        
+        languageDropdown.classList.remove('opacity-0', 'scale-95');
+        languageDropdown.classList.add('opacity-100', 'scale-100');
+        languageButton.setAttribute('aria-expanded', 'true');
+    } else {
+        languageDropdown.classList.remove('opacity-100', 'scale-100');
+        languageDropdown.classList.add('opacity-0', 'scale-95');
+        languageButton.setAttribute('aria-expanded', 'false');
+    }
+};
+
+const closeDropdown = () => {
+    if (!languageDropdown.classList.contains('hidden')) {
+        languageDropdown.classList.add('hidden');
+        languageDropdown.classList.remove('opacity-100', 'scale-100');
+        languageDropdown.classList.add('opacity-0', 'scale-95');
+        languageButton.setAttribute('aria-expanded', 'false');
+    }
+};
+
+languageButton.addEventListener('click', toggleDropdown);
+
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeDropdown();
+    }
+});
