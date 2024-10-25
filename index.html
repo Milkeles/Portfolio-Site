@@ -147,11 +147,12 @@
             </li>
           </ul>
         </nav>
+
         <!-- Translate Button -->
         <div class="absolute right-20 top-1/2 transform -translate-y-1/2 z-20">
           <div class="relative inline-block text-left">
             <button type="button" id="lang-button" aria-label="Switch Language"
-              class="z-20 inline-flex items-center justify-center gap-x-1.5 rounded-md bg-white dark:bg-neutral-900 px-3 py-2 text-neutral-900 dark:text-neutral-300 shadow-sm ring-1 ring-inset ring-neutral-300 dark:shadow-neutral-900 dark:ring-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800"
+              class="z-20 inline-flex items-center justify-center gap-x-1.5 rounded-md ternary-and-field"
               aria-expanded="false" aria-haspopup="true">
               <!-- Language Icon SVG -->
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -279,9 +280,9 @@
       <h2 class="mb-4">Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Project Card -->
-        <div class="bg-white p-4 rounded-lg shadow-lg">
+        <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg shadow-lg">
           <h3 class="mb-2">Portfolio Website</h3>
-          <p class="text-neutral-700">Tailwind and js. Practicing CRO. Idk why I'm putting this here now but will probably
+          <p class="text-neutral-700 dark:text-neutral-300">Tailwind and js. Practicing CRO. Idk why I'm putting this here now but will probably
             move it.</p>
         </div>
         <!-- Repeat Project Card for each project -->
@@ -295,26 +296,27 @@
         role="form" aria-labelledby="contact-heading">
         <div>
           <label for="name" class="sr-only"> Your Name</label>
-          <input id="name" type="text" name="name" placeholder="Your Name" class="w-full p-2 border rounded-lg" required
+          <input id="name" type="text" name="name" placeholder="Your Name" class="ternary-and-field w-full p-2 rounded-lg" required
             aria-required="true">
         </div>
         <div>
           <label for="email" class="sr-only">Your Email</label>
-          <input id="email" type="email" name="email" placeholder="Your Email" class="w-full p-2 border rounded-lg"
+          <input id="email" type="email" name="email" placeholder="Your Email" class="ternary-and-field w-full p-2 rounded-lg"
             required aria-required="true">
         </div>
         <div>
           <label for="message" class="sr-only">Your Message</label>
           <textarea id="message" name="message" placeholder="Your Message" rows="4"
-            class="w-full p-2 border rounded-lg"></textarea>
+            class="ternary-and-field w-full p-2 rounded-lg"></textarea>
         </div>
         <button type="submit" class="button-fill" aria-label="Send Message">Send Message</button>
       </form>
     </section>
   </main>
 </body>
+
 <!-- Footer -->
-<footer class="bg-neutral-100 dark:bg-neutral-900 text-black dark:text-white p-4 w-full">
+<footer class="bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white p-4 w-full">
   <div class="container mx-auto text-center">
     <p>&copy; 2024 Hristo Hristov. All rights reserved.</p>
   </div>
