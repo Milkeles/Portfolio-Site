@@ -33,11 +33,11 @@
 
 /*Secondary Button*/
 .button-outline {
-    @apply relative overflow-hidden  overflow-hidden rounded-md text-center inline-flex items-center me-2 lg:text-lg font-semibold !text-emerald-400 bg-transparent border-2 border-main-light dark:border-main-dark px-4 py-2 duration-300;
+    @apply relative overflow-hidden  overflow-hidden rounded-md text-center inline-flex items-center me-2 lg:text-lg font-semibold !text-emerald-400 dark:!text-emerald-300  bg-transparent border-2 border-main-light dark:border-main-dark px-4 py-2 duration-300;
 }
 
 .button-outline:hover {
-    @apply !text-emerald-500 -translate-y-0.5 shadow-md shadow-emerald-500/50;
+    @apply -translate-y-0.5 shadow-md shadow-emerald-500/50;
     /* Note: Removed background gradient here since it's handled by the pseudo-element */
 }
 
@@ -95,4 +95,9 @@
 /* Text highlighter */
 span {
     @apply text-main-light dark:text-main-dark;
+}
+
+/* Ternary Button & Fields */
+.ternary-and-field {
+    @apply bg-white dark:bg-neutral-900 px-3 py-2 text-neutral-900 dark:text-neutral-300 shadow-sm ring-1 ring-inset ring-neutral-300 dark:shadow-neutral-900 dark:ring-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800;
 }
